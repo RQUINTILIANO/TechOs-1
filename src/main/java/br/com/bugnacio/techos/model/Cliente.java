@@ -1,3 +1,4 @@
+
 package br.com.bugnacio.techos.model;
 
 import jakarta.persistence.Entity;
@@ -5,23 +6,30 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-// @entity: essa classe representa uma tabela no banco de dados.
-@Entity 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
+@Entity
 public class Cliente {
-    // @id: o campo que representa a chave primária da tabela.
-    // @GeneratedValue: o valor da chave primária será gerado automaticamente pelo banco de dados.
-    @Id 
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Cada atributo vira uma coluna na tabela do banco de dados. O nome da coluna será o mesmo do atributo, mas você pode mudar isso usando a anotação @Column.
+    @NotBlank(message = "Informe o nome")
+    @Size(max = 100, message = "O nome pode ter no máximo 100 caracteres")
     private String nome;
+
+    @NotBlank(message = "Informe o telefone")
+    @Size(max = 20, message = "O telefone pode ter no máximo 20 caracteres")
     private String telefone;
+
+    @Email(message = "E-mail inválido")
+    @Size(max = 150, message = "O e-mail pode ter no máximo 150 caracteres")
     private String email;
 
-    // Construtor padrão (sem argumentos) necessário para o JPA.
     public Cliente() {
-        
     }
 
     public Long getId() {
