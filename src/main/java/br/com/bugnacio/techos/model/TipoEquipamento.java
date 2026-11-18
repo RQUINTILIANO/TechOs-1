@@ -10,9 +10,4 @@ public enum TipoEquipamento {
     CELULAR,
     IMPRESSORA;
 
-    public boolean isBlank() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isBlank'");
-    }
-
 }

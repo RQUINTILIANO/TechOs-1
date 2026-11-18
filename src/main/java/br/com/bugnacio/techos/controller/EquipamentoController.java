@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.bugnacio.techos.model.Equipamento;
+import br.com.bugnacio.techos.repository.ClienteRepository;
 import br.com.bugnacio.techos.repository.EquipamentoRepository;
 import jakarta.validation.Valid;
 
@@ -19,10 +20,15 @@ import jakarta.validation.Valid;
 public class EquipamentoController {
 
     private final EquipamentoRepository repo;
-
-    public EquipamentoController(EquipamentoRepository repo) {
+    private final ClienteRepository clienteRepo;
+    
+    public EquipamentoController(
+            EquipamentoRepository repo,
+            ClienteRepository clienteRepo) {
         this.repo = repo;
+        this.clienteRepo = clienteRepo;
     }
+    
 
     @SuppressWarnings("null")
     @GetMapping
@@ -46,7 +52,7 @@ public class EquipamentoController {
     }
 
     @PostMapping("/salvar")
-public String salvar(
+        public String salvar(
         @Valid Equipamento equipamento,
         BindingResult result,
         RedirectAttributes redirect) {

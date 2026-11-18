@@ -27,7 +27,7 @@ public class Equipamento {
     @Size(max = 100, message = "A marca pode ter no máximo 100 caracteres")
     private String marca;
 
-    @NotBlank(message = "Informe o modelo")
+    @NotBlank(message = "Informe o modelo do equipamento")
     @Size(max = 100, message = "O modelo pode ter no máximo 100 caracteres")
     private String modelo;
 
