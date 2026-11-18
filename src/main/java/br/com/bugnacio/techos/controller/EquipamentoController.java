@@ -1,5 +1,6 @@
 package br.com.bugnacio.techos.controller;
 
+<<<<<<< HEAD
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,11 +15,20 @@ import br.com.bugnacio.techos.model.Equipamento;
 import br.com.bugnacio.techos.repository.ClienteRepository;
 import br.com.bugnacio.techos.repository.EquipamentoRepository;
 import jakarta.validation.Valid;
+=======
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+>>>>>>> 1d77bbadacaa1b9f88ecb00edcb73a63d5c8f9f6
 
 @Controller
 @RequestMapping("/equipamentos")
 public class EquipamentoController {
 
+<<<<<<< HEAD
     private final EquipamentoRepository repo;
     private final ClienteRepository clienteRepo;
     
@@ -97,4 +107,15 @@ public String excluir(
 
         return "equipamento/form";
     }
+=======
+    // Endereco: http://localhost:8080/equipamentos
+    @GetMapping
+    public String listar(Model model) {
+        // A tela equipamentos/lista espera uma lista chamada "equipamentos".
+        model.addAttribute("equipamentos", List.of());
+
+        // Abre: templates/equipamentos/lista.html
+        return "equipamentos/lista";
+    }
+>>>>>>> 1d77bbadacaa1b9f88ecb00edcb73a63d5c8f9f6
 }

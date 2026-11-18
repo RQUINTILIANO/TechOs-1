@@ -3,6 +3,11 @@ package br.com.bugnacio.techos.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+<<<<<<< HEAD
+=======
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+>>>>>>> 1d77bbadacaa1b9f88ecb00edcb73a63d5c8f9f6
 
 
 @Controller 
